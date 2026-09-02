@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-
   /* ---------- Tokens ---------- */
   :root{
     --ink: #16261F;
@@ -239,6 +238,15 @@
   .steps h3{ font-size: 1.02rem; margin:0 0 4px 0; }
   .steps p{ margin:0; font-size: 0.94rem; }
 
+  /* Embedded Form Container */
+  .form-container{
+    margin-top: 32px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 12px;
+    border-radius: 4px;
+  }
+
   /* Meetings table */
   .meet-table{
     width:100%; border-collapse: collapse;
@@ -259,12 +267,12 @@
   .table-scroll{ overflow-x:auto; }
 
   /* Officers roster */
-  .roster{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); }
+  .roster{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); }
   .roster-item{ background: var(--white); padding: 20px; }
   .roster-item .role{ font-family: var(--display); font-weight:600; color: var(--teal-deep); font-size:0.95rem; margin-bottom:4px; }
   .roster-item .name{ font-size: 0.95rem; }
   .roster-item .contact{ font-size: 0.88rem; color:#4B5A50; margin-top:4px; }
-  @media (max-width: 700px){ .roster{ grid-template-columns: 1fr; } }
+  @media (max-width: 850px){ .roster{ grid-template-columns: 1fr; } }
 
   /* Resources */
   .resource-list{ list-style:none; padding:0; margin:0; display:grid; gap:14px; }
@@ -306,11 +314,12 @@
     </button>
     <nav class="links" id="navLinks">
       <a href="#about">About</a>
+      <a href="#benefits">Benefits</a>
       <a href="#learn">Get Certified</a>
-      <a href="#join">How to Join</a>
-      <a href="#meetings">Meetings</a>
-      <a href="#officers">Officers</a>
-      <a href="#resources">Resources</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#join">Sign Up</a>
+      <a href="#meetings">Workshops</a>
+      <a href="#officers">Contact</a>
     </nav>
   </div>
 </header>
@@ -322,11 +331,11 @@
     <div class="wrap hero-inner">
       <div>
         <h1>Howell CPR &amp; AED Club</h1>
-        <p class="tagline">Learn CPR. Know the AED. Be ready when it counts.</p>
-        <p class="sub">A student-run club open to every Howell High School student, built with hands-on training from Livingston County EMS. No experience or background required — just a willingness to learn.</p>
+        <p class="tagline">Learn CPR. Know the AED. Save a life when it counts.</p>
+        <p class="sub">A student-run club open to all Howell High School students. Partnered with Livingston County EMS to offer flexible, group-scheduled workshops and certified life-saving skills.</p>
         <div class="cta-row">
-          <a href="#join" class="btn btn-primary">How to join</a>
-          <a href="#about" class="btn btn-secondary">What we do</a>
+          <a href="#join" class="btn btn-primary">Sign Up Now</a>
+          <a href="#leadership" class="btn btn-secondary">Apply for Leadership</a>
         </div>
       </div>
       <div class="hero-graphic" aria-hidden="true">
@@ -347,141 +356,154 @@
     <div class="wrap about-grid">
       <div>
         <div class="section-head">
-          <h2>Built for every kind of student</h2>
-          <p>This club isn't just for students already headed into medicine. It's for anyone who wants a skill that matters — no minimum GPA, no prerequisite class, no experience needed. Whether you're in AFJROTC, working toward an automotive or technical certification, planning a future in childcare or education, or you're just curious, there's a place for you here.</p>
+          <h2>Built around your schedule</h2>
+          <p>We work directly with <strong>Livingston County EMS</strong> instructors to host practical training workshops. Rather than demanding weekly meeting commitments, workshops are scheduled on dates that fit the enrolled group.</p>
         </div>
-        <p>We partner directly with <strong>Livingston County EMS</strong> to run real, hands-on training sessions — the same techniques taught in professional certification courses, adapted for a high school club setting.</p>
+        <p><strong>Cost &amp; Certification:</strong> Final per-student pricing will be established by Livingston County EMS once enrollment numbers are locked in (typically covering official card and materials costs). We are actively exploring fundraising initiatives to lower or offset out-of-pocket expenses for members!</p>
       </div>
       <div>
-        <h3 style="font-size:1rem; color:var(--teal-deep); margin-bottom:14px;">Who this is for</h3>
+        <h3 style="font-size:1rem; color:var(--teal-deep); margin-bottom:14px;">Who benefits most</h3>
         <ul class="audience-list">
-          <li>AFJROTC cadets building leadership &amp; emergency-response skills</li>
-          <li>Automotive &amp; technical program students (roadside &amp; shop safety)</li>
-          <li>Future childcare &amp; education students</li>
-          <li>Anyone who wants a resume- and college-application-ready certification</li>
-          <li>Anyone who just wants to know what to do in an emergency</li>
+          <li><strong>Healthcare Pathways:</strong> Key preparation for nursing, pre-med, or HHS senior EMT programs.</li>
+          <li><strong>AFJROTC Cadets:</strong> Satisfies emergency preparedness goals and service resume credentials.</li>
+          <li><strong>Childcare &amp; Education:</strong> Meets mandatory Michigan LARA child safety prerequisites.</li>
+          <li><strong>Automotive &amp; Trades:</strong> Boosts hiring eligibility with verified shop safety certification.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="alt">
+  <!-- BENEFITS -->
+  <section id="benefits" class="alt">
     <div class="wrap">
-      <div class="stat-strip">
-        <div class="stat">
-          <span class="num">2–3x</span>
-          <span class="label">Higher chance of survival when CPR is started immediately, rather than waiting for professional help to arrive.</span>
+      <div class="section-head">
+        <h2>Career &amp; College Advantages</h2>
+        <p>Gaining formal CPR/AED credentials provides immediate competitive value in job markets and college admissions.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <h3>Higher Earning Potential</h3>
+          <p>Qualified candidates often command better pay for positions in lifeguarding, camp counseling, childcare, and healthcare.</p>
         </div>
-        <div class="stat">
-          <span class="num">~40%</span>
-          <span class="label">Of people who need bystander CPR actually receive it before EMS arrives — the rest is up to whoever's nearby.</span>
+        <div class="cert-card">
+          <h3>College App Standing</h3>
+          <p>Highlights real-world responsibility, leadership, initiative, and community service on applications.</p>
+        </div>
+        <div class="cert-card">
+          <h3>Workplace Readiness</h3>
+          <p>Satisfies core safety requirements across vocational trades, athletic coaching, and emergency services.</p>
         </div>
       </div>
-      <p class="stat-source">Source: American Heart Association, cpr.heart.org</p>
     </div>
   </section>
 
-  <!-- LEARN / CERTS -->
+  <!-- LEARN -->
   <section id="learn">
     <div class="wrap">
       <div class="section-head">
         <h2>What you'll learn</h2>
-        <p>Training runs in small hands-on sessions led by Livingston County EMS staff and trained student leads, working up to an official certification.</p>
+        <p>Hands-on practice conducted using equipment provided in partnership with Livingston County EMS.</p>
       </div>
       <div class="cert-grid">
         <div class="cert-card">
-          <h3>CPR</h3>
-          <p>Hands-Only and full CPR for adults, children, and infants — chest compressions, rescue breaths, and recognizing cardiac arrest.</p>
+          <h3>CPR (Adult, Child, Infant)</h3>
+          <p>High-quality compressions, rescue breathing techniques, and rapid response to cardiac arrest.</p>
         </div>
         <div class="cert-card">
-          <h3>AED Use</h3>
-          <p>How to locate, operate, and safely use an automated external defibrillator in an emergency.</p>
+          <h3>AED Operation</h3>
+          <p>Safe operation and effective deployment of Automated External Defibrillators in public environments.</p>
         </div>
         <div class="cert-card">
-          <h3>Choking Response</h3>
-          <p>Recognizing and responding to a choking emergency in adults, children, and infants.</p>
+          <h3>Choking Emergency</h3>
+          <p>Abdominal thrusts and choking management for adults, children, and infants.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW TO JOIN -->
-  <section id="join" class="alt">
+  <!-- LEADERSHIP -->
+  <section id="leadership" class="alt">
     <div class="wrap">
       <div class="section-head">
-        <h2>How to join</h2>
-        <p>No cost to attend an interest meeting, and no commitment required until you're ready.</p>
+        <h2>Student Leadership Roles</h2>
+        <p>Stand out on applications by taking charge. We offer dedicated student leadership roles, and more executive positions will open as membership grows!</p>
       </div>
-      <ol class="steps">
-        <li>
-          <h3>Come to an interest meeting</h3>
-          <p>Drop by — no sign-up needed. Meeting details are in the Meetings section below.</p>
-        </li>
-        <li>
-          <h3>Fill out the club sign-up form</h3>
-          <p>Takes less than five minutes. Ask an officer or your faculty advisor for the current link or QR code.</p>
-        </li>
-        <li>
-          <h3>Attend training sessions</h3>
-          <p>Hands-on practice with CPR manikins and training AEDs, led by Livingston County EMS instructors and student officers.</p>
-        </li>
-        <li>
-          <h3>Get certified</h3>
-          <p>Pass a short skills check and written test (80% minimum) to earn an official CPR/AED certification card.</p>
-        </li>
-      </ol>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <h3>Workshop &amp; Training Lead</h3>
+          <p>Assist LCEMS personnel during workshops, help manage practice gear, and lead peer drill groups.</p>
+        </div>
+        <div class="cert-card">
+          <h3>Outreach &amp; Promotions Lead</h3>
+          <p>Direct student recruitment, manage school announcements, and run community publicity.</p>
+        </div>
+        <div class="cert-card">
+          <h3>Operations &amp; Schedule Lead</h3>
+          <p>Coordinate flexible workshop dates, handle enrollment tracking, and manage communication schedules.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN & FORM -->
+  <section id="join">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Sign Up Form</h2>
+        <p>Fill out the embedded Google Form below to sign up for workshops or apply for a leadership position.</p>
+      </div>
+
+      <div class="form-container">
+        <iframe src="https://forms.gle/KmmrYTFWQJTR5aAj9" width="100%" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+      <p style="margin-top: 12px; font-size:0.92rem;"> <a href="https://forms.gle/KmmrYTFWQJTR5aAj9" target="_blank" rel="noopener">Form not displaying? Click here to open it directly in a new tab.</a></p>
     </div>
   </section>
 
   <!-- MEETINGS -->
-  <section id="meetings">
+  <section id="meetings" class="alt">
     <div class="wrap">
       <div class="section-head">
-        <h2>Meetings &amp; events</h2>
-        <p>Fill in your club's actual schedule below before publishing — these are placeholders.</p>
+        <h2>Flexible Workshop Model</h2>
+        <p>No rigid recurring weekly meetings—sessions are scheduled around member availability once groups are set.</p>
       </div>
       <div class="table-scroll">
         <table class="meet-table">
           <thead>
-            <tr><th>What</th><th>When</th><th>Where</th></tr>
+            <tr><th>Event</th><th>Timing</th><th>Location</th></tr>
           </thead>
           <tbody>
-            <tr><td>Weekly club meeting</td><td>[Day, time]</td><td>[Room number]</td></tr>
-            <tr><td>Certification training session</td><td>[Date TBD]</td><td>[Location]</td></tr>
-            <tr><td>Community outreach event</td><td>[Date TBD]</td><td>[School / community location]</td></tr>
+            <tr><td>Member Orientation</td><td>Scheduled upon group sign-ups</td><td>Howell High School</td></tr>
+            <tr><td>LCEMS Certification Workshop</td><td>Group-selected date &amp; time</td><td>Howell High School</td></tr>
+            <tr><td>Leadership Meetings</td><td>As-needed check-ins</td><td>Howell High School</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- OFFICERS -->
-  <section id="officers" class="alt">
+  <!-- CONTACT -->
+  <section id="officers">
     <div class="wrap">
       <div class="section-head">
-        <h2>Officers &amp; contact</h2>
-        <p>Replace with real names and contact info before publishing. Consider using a club email address rather than personal contact info for anyone listed here, including EMS staff.</p>
+        <h2>Contact Information</h2>
+        <p>Questions regarding workshop schedules, costs, leadership, or fundraising?</p>
       </div>
       <div class="roster">
         <div class="roster-item">
-          <div class="role">President</div>
-          <div class="name">[Name]</div>
-          <div class="contact">[club email]</div>
+          <div class="role">Student Lead &amp; Organizer</div>
+          <div class="name">Khloe Lennon</div>
+          <div class="contact">Email: <a href="mailto:khloelennon09@gmail.com">khloelennon09@gmail.com</a><br>Phone: <a href="tel:5866894099">(586) 689-4099</a></div>
         </div>
         <div class="roster-item">
-          <div class="role">Vice President</div>
-          <div class="name">[Name]</div>
-          <div class="contact">[club email]</div>
+          <div class="role">Staff Advisor</div>
+          <div class="name">Kyle Hartmann</div>
+          <div class="contact">Email: <a href="mailto:hartmank@howellschools.com">hartmank@howellschools.com</a><br>Howell High School</div>
         </div>
         <div class="roster-item">
-          <div class="role">Secretary</div>
-          <div class="name">[Name]</div>
-          <div class="contact">[club email]</div>
-        </div>
-        <div class="roster-item">
-          <div class="role">Faculty Advisor</div>
-          <div class="name">[Name]</div>
-          <div class="contact">[school email]</div>
+          <div class="role">Training Partner</div>
+          <div class="name">Livingston County EMS</div>
+          <div class="contact">1911 Tooley Rd, Howell, MI<br>Education Dept &amp; AHA Training</div>
         </div>
       </div>
     </div>
@@ -511,6 +533,21 @@
     </div>
   </section>
 
+  <!-- SOURCES -->
+  <section id="sources" class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Sources</h2>
+        <p>Primary references used for statistics and guidance on this site.</p>
+      </div>
+      <ul class="resource-list">
+        <li><a href="https://cpr.heart.org/en/resources/cpr-facts-and-stats" target="_blank" rel="noopener">American Heart Association — CPR Facts &amp; Stats</a></li>
+        <li><a href="https://www.redcross.org/take-a-class/cpr" target="_blank" rel="noopener">American Red Cross — CPR Classes</a></li>
+        <li><a href="https://www.livgov.com/" target="_blank" rel="noopener">Livingston County, MI — Government Site</a></li>
+      </ul>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -521,27 +558,36 @@
       </svg>
       Howell CPR &amp; AED Club
     </a>
-    <p>A student-run club at Howell High School, Livingston County, Michigan, in partnership with Livingston County EMS.</p>
+    <p>A student-run club at Howell High School in partnership with Livingston County EMS.</p>
     <div class="foot-links">
-      <a href="#join">How to join</a>
-      <a href="#meetings">Meetings</a>
-      <a href="#resources">Resources</a>
+      <a href="#join">Sign Up</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#meetings">Workshops</a>
     </div>
-    <p class="fine">This club is not a substitute for calling 911 in a real emergency.</p>
+    <p class="fine">Educational CPR/AED awareness. Always call 911 in a real medical emergency.</p>
   </div>
 </footer>
 
 <script>
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
+  
   toggle.addEventListener('click', () => {
     const open = links.classList.toggle('open');
     toggle.setAttribute('aria-expanded', open);
   });
+  
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', false);
+    toggle.setAttribute('aria-expanded', 'false');
   }));
+
+  document.addEventListener('click', (e) => {
+    if (!toggle.contains(e.target) && !links.contains(e.target) && links.classList.contains('open')) {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 </script>
 
 </body>
